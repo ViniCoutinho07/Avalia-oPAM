@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Provaa.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="500">
+
+            <Label
+                 Text="Rolador de Dados"
+                 Style="{StaticResource Headline}"
+                 SemanticProperties.HeadingLevel="Level1" 
+                TextColor="Black"/>
+
+
+            <Picker x:Name="Rolar"
+            Title="Quantidade de lados"
+            SelectedIndexChanged= "Rolar_Selecionador">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>4 lados</x:String>
+                        <x:String>6 lados</x:String>
+                        <x:String>10 lados</x:String>
+                        <x:String>20 lados</x:String>
+                        <x:String>100 lados</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+
+            <Button
+                x:Name="CounterBtn"
+                Text="Rolar o Dado" 
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="Rolar_Selecionador"
+                HorizontalOptions="Fill"
+                BackgroundColor="Black"
+                HeightRequest="50"
+                WidthRequest="650"/>
+            
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
